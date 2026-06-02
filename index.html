@@ -1,11 +1,12 @@
-
+Aqui está o código HTML com o botão "Jogo: Carbono Neutro" removido, mantendo o design futurista, as datas atualizadas para 2026 e os créditos para Fernando Kendy Mori.
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Agro Forte 2026 | Futuro Sustentável + Jogo Carbono Neutro</title>
-    <!-- Google Fonts + Ícones Material Symbols (para um toque futurista) -->
+    <title>Agro Forte 2026 | Futuro Sustentável</title>
+    <!-- Google Fonts + Ícones Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1" />
     <style>
@@ -47,7 +48,6 @@
             pointer-events: none;
         }
 
-        /* partículas animadas (opcional) */
         .particle-glow {
             position: fixed;
             width: 100%;
@@ -64,14 +64,13 @@
             100% { transform: translate(3%, 2%) scale(1.1); opacity: 0.35; }
         }
 
-        /* container geral */
         .container {
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* header/neon */
+        /* navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -114,7 +113,7 @@
             text-shadow: 0 0 4px #1effaa;
         }
 
-        /* hero section */
+        /* hero */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -182,6 +181,11 @@
             gap: 8px;
         }
 
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(46, 255, 188, 0.5);
+        }
+
         .btn-outline {
             background: transparent;
             border: 1px solid #30e6a8;
@@ -193,6 +197,9 @@
             cursor: pointer;
             backdrop-filter: blur(8px);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-outline:hover {
@@ -201,7 +208,6 @@
             border-color: #7effce;
         }
 
-        /* Seções estilo cards futuristas */
         section {
             padding: 5rem 0;
             border-bottom: 1px solid rgba(0, 255, 170, 0.08);
@@ -265,7 +271,6 @@
             line-height: 1.5;
         }
 
-        /* seção de dados / equilibrio  */
         .equilibrium-stats {
             display: flex;
             flex-wrap: wrap;
@@ -350,7 +355,6 @@
             color: #befff0;
         }
 
-        /* CTA final */
         .cta-section {
             text-align: center;
             padding: 4rem 1rem;
@@ -379,138 +383,6 @@
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             border-left: 2px solid #2effbc;
-        }
-
-        /* MODAL DO JOGO - estilos futuristas */
-        .game-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Inter', monospace;
-        }
-
-        .game-container {
-            background: #0c1c1e;
-            border-radius: 48px;
-            max-width: 550px;
-            width: 90%;
-            padding: 1.8rem;
-            border: 1px solid #2effbc;
-            box-shadow: 0 0 40px rgba(46, 255, 188, 0.3);
-            text-align: center;
-            animation: fadeSlideUp 0.3s ease;
-        }
-
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .game-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 1rem;
-            border-bottom: 1px dashed #2effbc;
-            padding-bottom: 0.5rem;
-        }
-
-        .game-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #b9ffe6;
-        }
-
-        .close-game {
-            font-size: 2rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #8effd0;
-            transition: 0.2s;
-        }
-
-        .close-game:hover {
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .co2-meter {
-            background: #02100e;
-            border-radius: 50px;
-            height: 20px;
-            margin: 1.2rem 0;
-            overflow: hidden;
-            border: 1px solid #2effbc;
-        }
-
-        .co2-fill {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #58f0b0, #0f9b66);
-            transition: width 0.2s ease;
-        }
-
-        .game-stats {
-            display: flex;
-            justify-content: space-between;
-            margin: 1rem 0;
-            font-size: 1rem;
-            background: #051a1a;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-        }
-
-        .game-choices {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin: 1.5rem 0;
-        }
-
-        .game-btn {
-            background: #0a2828;
-            border: 1px solid #2c7a62;
-            padding: 12px;
-            border-radius: 60px;
-            color: #d4f5ec;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .game-btn:hover {
-            background: #1f554b;
-            border-color: #2effbc;
-            transform: scale(1.01);
-        }
-
-        .reset-game {
-            background: #0f4038;
-            margin-top: 10px;
-            border: none;
-            width: 100%;
-        }
-
-        .game-message {
-            background: #0d2a24;
-            border-radius: 28px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.9rem;
-            color: #b9ffe0;
         }
 
         @media (max-width: 800px) {
@@ -559,7 +431,7 @@
         <p>Produção inteligente, tecnologia regenerativa e harmonia com os biomas. O amanhã da agricultura começa agora — em 2026, o agro brasileiro lidera a revolução verde 5.0.</p>
         <div class="btn-group">
             <a href="#solucoes" class="btn-primary"><span class="material-symbols-outlined" style="font-size:1.2rem;">sustainability</span> Explorar tecnologias</a>
-            <button id="openGameBtn" class="btn-outline"><span class="material-symbols-outlined" style="font-size:1.2rem;">stadia_controller</span> Jogo: Carbono Neutro</button>
+            <a href="#inovacao" class="btn-outline"><span class="material-symbols-outlined" style="font-size:1.2rem;">eco</span> Conhecer inovação</a>
         </div>
     </div>
 
@@ -613,10 +485,10 @@
                 <p>dos produtores adotam alguma prática regenerativa (2026)</p>
             </div>
         </div>
-        <p style="text-align:center; margin-top:2rem; font-size:0.85rem; color:#95b7af;">*projeções com base em transição tecnológica e políticas de bioeconomia 2026.</p>
+        <p style="text-align:center; margin-top:2rem; font-size:0.85rem; color:#95b7af;">*dados baseados em transição tecnológica e políticas de bioeconomia 2026.</p>
     </section>
 
-    <!-- inovação destacada  -->
+    <!-- inovação destacada -->
     <section id="inovacao">
         <div class="innovation">
             <div class="innovation-text">
@@ -660,13 +532,13 @@
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA final -->
     <div class="cta-section">
         <span class="material-symbols-outlined" style="font-size: 3rem; color:#2effbc;">verified</span>
         <h2 style="font-size: 2rem; margin: 0.8rem 0;">Colha o amanhã, hoje — 2026</h2>
-        <p style="max-width: 650px; margin: 1rem auto;">O Agro Forte não é uma escolha entre produzir ou conservar: é a síntese de inteligência, natureza e inovação. Junte-se à revolução regenerativa.</p>
+        <p style="max-width: 650px; margin: 1rem auto;">O Agro Forte não é uma escolha entre produzir ou conservar: é a síntese de inteligência, natureza e inovação. Junte-se à revolução regenerativa que já transforma o presente.</p>
         <div style="margin-top: 1.5rem;">
-            <button id="ctaGameBtn" class="btn-primary" style="background: #0e4a38;">🌎 Jogar e alcançar Net Zero →</button>
+            <a href="#solucoes" class="btn-primary" style="background: #0e4a38;">🌎 Quero fazer parte →</a>
         </div>
     </div>
 
@@ -682,164 +554,7 @@
     </footer>
 </div>
 
-<!-- MODAL DO JOGO "NEUTRO EM CARBONO" -->
-<div id="gameModal" class="game-modal">
-    <div class="game-container">
-        <div class="game-header">
-            <span class="game-title">🌿 DESAFIO CARBONO NEUTRO 🌿</span>
-            <button class="close-game" id="closeGameModalBtn">&times;</button>
-        </div>
-        <p style="margin-bottom: 0.5rem;">🌎 Sua fazenda digital emite CO₂. Tome decisões sustentáveis para zerar as emissões até 2030 (rodadas).</p>
-        <div class="co2-meter">
-            <div id="co2Fill" class="co2-fill" style="width: 100%;"></div>
-        </div>
-        <div class="game-stats">
-            <span>🔴 Emissões atuais: <strong id="co2Value">100</strong> kg CO₂e</span>
-            <span>🎯 Meta: <strong id="targetNeutral">0 kg</strong></span>
-            <span>🔁 Rodada: <strong id="roundCount">0</strong></span>
-        </div>
-        <div id="gameMessage" class="game-message">⚡ Bem-vindo, gestor rural! Reduza suas emissões com boas práticas.</div>
-        <div class="game-choices" id="gameChoices">
-            <!-- botoes gerados via js -->
-        </div>
-        <button id="resetGameBtn" class="game-btn reset-game">🔄 Reiniciar Jogo</button>
-        <p style="font-size: 0.7rem; margin-top: 12px;">Cada decisão influencia o índice de carbono. Se chegar a zero antes de 5 rodadas, você alcança a neutralidade!</p>
-    </div>
-</div>
-
 <script>
-    // JOGO INTERATIVO CARBONO NEUTRO (simulação de fazenda)
-    let currentCO2 = 100;        // emissões iniciais
-    let rounds = 0;
-    let maxRounds = 6;            // limite de rodadas para alcançar net zero
-    let gameActive = true;
-    let gameWinFlag = false;
-
-    // ações sustentáveis e seus impactos (valores negativos = redução de emissões)
-    const actions = [
-        { name: "🌳 Plantio de árvores nativas", effect: -18, desc: "Restauração florestal sequestra CO₂." },
-        { name: "⚡ Energia solar + biogás", effect: -22, desc: "Energia limpa reduz emissões drasticamente." },
-        { name: "🌾 Integração Lavoura-Pecuária (ILP)", effect: -14, desc: "Solo saudável retém carbono." },
-        { name: "🚜 Otimização de fertilizantes (IA)", effect: -12, desc: "Menos N₂O, mais eficiência." },
-        { name: "💧 Irrigação inteligente", effect: -8, desc: "Uso eficiente da água e redução energética." }
-    ];
-    
-    // evento de penalidade (caso ultrapasse)
-    let actionHistory = [];
-
-    function updateUI() {
-        let percent = Math.min(100, Math.max(0, (currentCO2 / 100) * 100));
-        document.getElementById("co2Fill").style.width = percent + "%";
-        document.getElementById("co2Value").innerText = Math.floor(currentCO2);
-        if (currentCO2 <= 0 && gameActive) {
-            gameWin();
-        } else if (rounds >= maxRounds && currentCO2 > 0 && gameActive) {
-            gameLose();
-        }
-        if (gameActive && currentCO2 <= 0) gameWin();
-    }
-
-    function gameWin() {
-        if(gameWinFlag) return;
-        gameActive = false;
-        gameWinFlag = true;
-        document.getElementById("gameMessage").innerHTML = "🎉 PARABÉNS! 🌱 SUA FAZENDA ATINGIU O EQUILÍBRIO CARBONO NEUTRO! Você provou que Agro Forte e futuro sustentável caminham juntos. 🎉";
-        disableChoiceButtons(true);
-    }
-
-    function gameLose() {
-        if(!gameActive) return;
-        gameActive = false;
-        document.getElementById("gameMessage").innerHTML = "⚠️ Infelizmente as emissões excederam o limite. O desafio exige decisões mais regenerativas. Reinicie e tente alcançar Net Zero! 🌍";
-        disableChoiceButtons(true);
-    }
-
-    function disableChoiceButtons(disabled) {
-        const btns = document.querySelectorAll('.game-choice-btn');
-        btns.forEach(btn => {
-            if(disabled) btn.disabled = true;
-            else btn.disabled = false;
-        });
-    }
-
-    function applyAction(effect, actionName, desc) {
-        if (!gameActive) return;
-        let previous = currentCO2;
-        currentCO2 += effect;
-        if (currentCO2 < 0) currentCO2 = 0;
-        rounds++;
-        document.getElementById("roundCount").innerText = rounds;
-        let message = `🌱 ${actionName}: ${desc} `;
-        if(effect < 0) message += `Emissões reduzidas em ${Math.abs(effect)} kg CO₂e. `;
-        else message += `⚠️ Emissões aumentaram. `;
-        message += `Novo total: ${Math.floor(currentCO2)} kg CO₂e.`;
-        document.getElementById("gameMessage").innerHTML = message;
-        updateUI();
-        if(rounds >= maxRounds && currentCO2 > 0 && gameActive) gameLose();
-        if(currentCO2 <= 0 && gameActive) gameWin();
-    }
-
-    function buildGameChoices() {
-        const container = document.getElementById("gameChoices");
-        container.innerHTML = "";
-        actions.forEach(action => {
-            const btn = document.createElement("button");
-            btn.className = "game-btn game-choice-btn";
-            btn.innerHTML = `<span>${action.name}</span> <span style="color:#b0ffc5;">${action.effect} kg CO₂</span>`;
-            btn.addEventListener("click", () => {
-                if(gameActive && rounds < maxRounds && currentCO2 > 0) {
-                    applyAction(action.effect, action.name, action.desc);
-                } else if (currentCO2 <= 0) {
-                    // já ganhou
-                } else if (rounds >= maxRounds && currentCO2 > 0) {
-                    gameLose();
-                } else if (!gameActive) {
-                    document.getElementById("gameMessage").innerHTML = "O jogo foi finalizado. Clique em Reiniciar para novo desafio.";
-                }
-            });
-            container.appendChild(btn);
-        });
-    }
-
-    function resetGame() {
-        currentCO2 = 100;
-        rounds = 0;
-        gameActive = true;
-        gameWinFlag = false;
-        document.getElementById("roundCount").innerText = "0";
-        updateUI();
-        document.getElementById("gameMessage").innerHTML = "🔄 Jogo reiniciado! Sua fazenda emite 100kg CO₂e. Escolha ações sustentáveis para alcançar a neutralidade rápida!";
-        disableChoiceButtons(false);
-    }
-
-    // Modal logic
-    const modal = document.getElementById("gameModal");
-    const openBtn = document.getElementById("openGameBtn");
-    const ctaBtn = document.getElementById("ctaGameBtn");
-    const closeModalBtn = document.getElementById("closeGameModalBtn");
-    const resetBtn = document.getElementById("resetGameBtn");
-
-    openBtn.addEventListener("click", () => {
-        resetGame(); // garante estado novo ao abrir
-        buildGameChoices();
-        modal.style.display = "flex";
-    });
-    ctaBtn.addEventListener("click", () => {
-        resetGame();
-        buildGameChoices();
-        modal.style.display = "flex";
-    });
-    closeModalBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-    resetBtn.addEventListener("click", () => {
-        resetGame();
-        buildGameChoices(); // reconstrói botões com estado ativo
-    });
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) modal.style.display = "none";
-    });
-
     // suavidade nos links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -852,5 +567,12 @@
             }
         });
     });
-    // console credito
-    console.log("🌿 Agro Forte 2026 - Sustentabilidade. Créditos:
+    
+    // pequeno efeito de console com créditos
+    console.log("🌿 Agro Forte 2026 - Futuro Sustentável");
+    console.log("🧑‍🌾 Desenvolvido por Fernando Kendy Mori | Equilíbrio entre produção e meio ambiente");
+    console.log("🚜 Tecnologias regenerativas para um agro forte e neutro em carbono.");
+</script>
+</body>
+</html>
+```
