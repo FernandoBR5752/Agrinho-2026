@@ -1,0 +1,180 @@
+// script.js - Agro Forte 2026 | Futuro Sustentável
+// Interatividade, navegação suave e console com informações
+
+// Aguarda o DOM estar completamente carregado
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Navegação suave para links internos (âncoras)
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }
+            });
+        });
+    }
+
+    // Efeito de fade-in ao rolar a página (animações sutis)
+    function initScrollReveal() {
+        const cards = document.querySelectorAll('.card-future, .awareness-card, .stat-item');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    }
+
+    // Contador animado para as estatísticas (quando entrarem em viewport)
+    function initAnimatedCounters() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let animated = false;
+        
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+        
+        const animateNumber = (element, targetValue) => {
+            let current = 0;
+            const suffix = element.innerText.replace(/[0-9+\-\.,]/g, '');
+            const numericValue = parseFloat(targetValue.toString().replace(/[^0-9.-]+/g, ''));
+            
+            if (isNaN(numericValue)) return;
+            
+            const duration = 2000;
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            const increment = numericValue / steps;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= numericValue) {
+                    current = numericValue;
+                    clearInterval(timer);
+                }
+                if (element.innerText.includes('%')) {
+                    element.innerText = Math.floor(current) + '%';
+                } else if (element.innerText.includes('Gt')) {
+                    element.innerText = current.toFixed(1) + ' Gt CO₂';
+                } else {
+                    element.innerText = Math.floor(current) + (suffix || '');
+                }
+            }, stepTime);
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (animated) return;
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    statNumbers.forEach(stat => {
+                        const targetText = stat.getAttribute('data-target') || stat.innerText;
+                        stat.setAttribute('data-target', targetText);
+                        animateNumber(stat, targetText);
+                    });
+                    observer.disconnect();
+                }
+            });
+        }, observerOptions);
+        
+        // Salvar valores originais nos atributos data-target
+        statNumbers.forEach(stat => {
+            const originalValue = stat.innerText;
+            stat.setAttribute('data-target', originalValue);
+            // Valores iniciais zerados para animação
+            if (originalValue.includes('%')) {
+                stat.innerText = '0%';
+            } else if (originalValue.includes('Gt')) {
+                stat.innerText = '0 Gt CO₂';
+            } else {
+                stat.innerText = '0';
+            }
+        });
+        
+        observer.observe(document.querySelector('#impacto') || document.body);
+    }
+
+    // Tooltip ou efeito de brilho nos ícones sociais (opcional)
+    function initSocialIconsEffects() {
+        const socialIcons = document.querySelectorAll('.social-icon');
+        socialIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                console.log(`🔗 Ícone social: ${icon.getAttribute('aria-label')} - redirecionamento configurado`);
+            });
+        });
+    }
+
+    // Log de informações no console
+    function logConsoleInfo() {
+        console.log("🌿 Agro Forte 2026 - Informações reais sobre sustentabilidade e conscientização ambiental");
+        console.log("🧑‍🌾 Créditos: Fernando Kendy Mori | Dados baseados em relatórios oficiais");
+        console.log("🌎 O equilíbrio entre produção e meio ambiente é possível e urgente.");
+        console.log("🔗 Ícones sociais configurados:");
+        console.log("   • WhatsApp: número para contato (5511999999999)");
+        console.log("   • GitHub: https://github.com/FernandoBR5752");
+        console.log("   • Instagram: @fernando_mori4");
+        console.log("📊 Dados reais utilizados: Embrapa, MAPA, IPCC, Observatório ABC 2025");
+    }
+
+    // Função para verificar se elementos essenciais existem (fallback)
+    function checkElements() {
+        const requiredSections = ['solucoes', 'conscientizacao', 'impacto'];
+        requiredSections.forEach(sectionId => {
+            if (!document.getElementById(sectionId)) {
+                console.warn(`⚠️ Seção com ID '${sectionId}' não encontrada no documento.`);
+            }
+        });
+    }
+
+    // Inicializar todas as funções
+    function init() {
+        initSmoothScroll();
+        initScrollReveal();
+        initAnimatedCounters();
+        initSocialIconsEffects();
+        logConsoleInfo();
+        checkElements();
+    }
+
+    // Executar inicialização
+    init();
+});
+
+// Adicionar evento para páginas com carregamento dinâmico (garantia extra)
+window.addEventListener('load', function() {
+    console.log("🚀 Site Agro Forte 2026 - Futuro Sustentável completamente carregado");
+    
+    // Aplicar estilo adicional para garantir que elementos escondidos apareçam
+    const hiddenCards = document.querySelectorAll('.card-future, .awareness-card');
+    hiddenCards.forEach(card => {
+        if (card.style.opacity === '0') {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }
+    });
+});
